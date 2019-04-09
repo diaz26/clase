@@ -5,7 +5,7 @@ class Login extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('model_login');;
+		$this->load->model('model_login');
 	}
 	public function index()
 	{
@@ -19,7 +19,7 @@ class Login extends CI_Controller {
 		$user= $this->input->post('user');
 		$pass = md5($this->input->post('pass'));
 		$passno = $this->input->post('pass');
-		
+
 		$result=$this->model_login->consultaUser($user,$pass);
 
 		if(count($result)==1){
